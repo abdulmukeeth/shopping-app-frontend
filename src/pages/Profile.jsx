@@ -60,8 +60,32 @@ export default function Profile() {
           <strong>Phone:</strong> 9873456574
         </p>
       </div>
+    <div className="row g-4">
+      <div className="col-md-6">
+          <div className="card p-3 shadow-sm border-0 rounded-4">
+            <h5 className="fw-bold mb-3">Order History</h5>
 
-      <div className="row g-4">
+            {orders.length === 0 ? (
+              <p className="text-muted">No orders placed yet</p>
+            ) : (
+              orders.map((o) => (
+                <div key={o._id} className="border rounded p-2 mb-2">
+                  <p className="fw-semibold mb-1">Total: ₹{o.total}</p>
+                  <p className="text-muted small mb-1">
+                    Items: {o.items.length}
+                  </p>
+                  <p className="text-muted small mb-0">
+                    Placed on {new Date(o.placedAt).toLocaleDateString()} at{" "}
+                    {new Date(o.placedAt).toLocaleTimeString()}
+                  </p>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+        </div>
+
+      <div className="row g-4 mt-2">
         <div className="col-md-6">
           <div className="card p-3 shadow-sm border-0 rounded-4">
             <h5 className="fw-bold mb-3">
@@ -165,28 +189,6 @@ export default function Profile() {
                       Delete
                     </button>
                   </div>
-                </div>
-              ))
-            )}
-          </div>
-        </div>
-
-        <div className="col-md-6">
-          <div className="card p-3 shadow-sm border-0 rounded-4">
-            <h5 className="fw-bold mb-3">Order History</h5>
-
-            {orders.length === 0 ? (
-              <p className="text-muted">No orders placed yet</p>
-            ) : (
-              orders.map((o) => (
-                <div key={o._id} className="border rounded p-2 mb-2">
-                  <p className="fw-semibold mb-1">Total: ₹{o.total}</p>
-                  <p className="text-muted small mb-1">
-                    Items: {o.items.length}
-                  </p>
-                  <p className="text-muted small mb-0">
-                    Placed At: {o.placedAt}
-                  </p>
                 </div>
               ))
             )}

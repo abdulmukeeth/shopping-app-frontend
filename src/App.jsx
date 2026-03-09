@@ -12,10 +12,11 @@ import Alert from "./components/Alert";
 
 function App() {
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <Navbar />
       <Alert />
-      <div className="container mt-3">
+
+      <div className="flex-grow-1 container py-4">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<ProductListing />} />
@@ -26,8 +27,9 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </div>
+
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -17,7 +17,7 @@ export default function Filters() {
       <h5>Filters</h5>
 
       <h6>Category</h6>
-      {["Men Clothing", "Women Clothing", "Kids"].map((cat) => (
+      {["Men Clothing", "Women Clothing", "Kids", "Accessories", "Footwear"].map((cat) => (
         <div key={cat}>
           <input
             type="checkbox"

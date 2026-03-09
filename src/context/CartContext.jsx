@@ -27,9 +27,11 @@ export function CartProvider({ children }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          productId: product._id,
-          title: product.title,
-          price: product.price,
+            productId: product._id,
+            title: product.title,
+            price: product.price,
+            image: product.image,
+            rating: product.rating
         }),
       }
     );

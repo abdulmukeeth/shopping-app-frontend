@@ -22,24 +22,70 @@ export default function Home() {
   if (loading) return <Loader />;
 
   return (
-    <div className="container mt-4">
-      <h3>Featured Categories</h3>
-      <div className="row">
-        {categories.map((cat) => (
-          <div key={cat._id} className="col-md-3">
+  <div className="container mt-4">
+    <h3>Featured Categories</h3>
+
+    {/* FIRST ROW - MEN & WOMEN (2 Wide Cards) */}
+    <div className="row mb-4">
+      {categories
+        .filter(
+          (cat) => cat.name === "Men Clothing" || cat.name === "Women Clothing"
+        )
+        .map((cat) => (
+          <div key={cat._id} className="col-md-6 mb-3">
             <div
-              className="card p-4 text-center"
+              className="card shadow-sm border-0 rounded-4 overflow-hidden"
+              style={{ cursor: "pointer" }}
               onClick={() => {
                 setCategoryFilter(cat.name);
                 navigate("/products");
               }}
-              style={{ cursor: "pointer" }}
             >
-              <h5>{cat.name}</h5>
+              <img
+                src={cat.image}
+                alt={cat.name}
+                className="card-img-top"
+                style={{ height: "250px", objectFit: "cover" }}
+              />
+              <div className="card-body text-center">
+                <h5 className="fw-bold">{cat.name}</h5>
+              </div>
             </div>
           </div>
         ))}
-      </div>
     </div>
-  );
+
+    {/* SECOND ROW - 3 CARDS */}
+    <div className="row">
+      {categories
+        .filter(
+          (cat) =>
+            cat.name === "Accessories" ||
+            cat.name === "Footwear" ||
+            cat.name === "Kids"
+        )
+        .map((cat) => (
+          <div key={cat._id} className="col-md-4 mb-3">
+            <div
+              className="card shadow-sm border-0 rounded-4 overflow-hidden"
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                setCategoryFilter(cat.name);
+                navigate("/products");
+              }}
+            >
+              <img
+                src={cat.image}
+                alt={cat.name}
+                className="card-img-top"
+                style={{ height: "200px", objectFit: "cover" }}
+              />
+              <div className="card-body text-center">
+                <h6 className="fw-bold">{cat.name}</h6>
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+  </div>  );
 }
