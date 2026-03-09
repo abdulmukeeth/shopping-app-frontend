@@ -75,8 +75,9 @@ export default function Profile() {
                     Items: {o.items.length}
                   </p>
                   <p className="text-muted small mb-0">
-                    Placed on {new Date(o.placedAt).toLocaleDateString()} at{" "}
-                    {new Date(o.placedAt).toLocaleTimeString()}
+                    Placed on{" "}
+                    {new Date(o.placedAt).toLocaleDateString("en-US", { timeZone: "UTC" })} at{" "}
+                    {new Date(o.placedAt).toLocaleTimeString("en-US", { timeZone: "UTC" })}
                   </p>
                 </div>
               ))
