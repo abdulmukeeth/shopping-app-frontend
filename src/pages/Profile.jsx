@@ -45,10 +45,10 @@ export default function Profile() {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="px-4 mt-4">
       <h3 className="fw-bold">User Profile</h3>
 
-      <div className="card p-3 shadow-sm border-0 rounded-4 mb-4">
+      <div className="card p-3 shadow-sm border border-grey rounded-4 mb-4">
         <h5 className="fw-bold mb-2">Profile Details</h5>
         <p className="mb-1">
           <strong>Name:</strong> Abdul Mukeeth
@@ -62,9 +62,8 @@ export default function Profile() {
       </div>
     <div className="row g-4">
       <div className="col-md-6">
-          <div className="card p-3 shadow-sm border-0 rounded-4">
-            <h5 className="fw-bold mb-3">Order History</h5>
-
+        <div className="card p-3 shadow-sm border border-grey rounded-4">
+          <h5 className="fw-bold mb-3">Order History</h5>
             {orders.length === 0 ? (
               <p className="text-muted">No orders placed yet</p>
             ) : (
@@ -82,13 +81,11 @@ export default function Profile() {
                 </div>
               ))
             )}
-          </div>
         </div>
-        </div>
+      </div>
 
-      <div className="row g-4 mt-2">
-        <div className="col-md-6">
-          <div className="card p-3 shadow-sm border-0 rounded-4">
+      <div className="col-md-6">
+          <div className="card p-3 shadow-sm border border-grey rounded-4">
             <h5 className="fw-bold mb-3">
               {editingId ? "Update Address" : "Add New Address"}
             </h5>
@@ -154,7 +151,7 @@ export default function Profile() {
               )}
             </form>
           </div>
-          <div className="card p-3 shadow-sm border-0 rounded-4 mt-4">
+          <div className="card p-3 shadow-sm border border-grey rounded-4 mt-4">
             <h5 className="fw-bold mb-3">Saved Addresses</h5>
 
             {addresses.length === 0 ? (
@@ -194,8 +191,8 @@ export default function Profile() {
               ))
             )}
           </div>
-        </div>
       </div>
+    </div>
     </div>
   );
 }

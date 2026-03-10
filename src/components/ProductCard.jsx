@@ -11,8 +11,8 @@ export default function ProductCard({ product }) {
   const inWishlist = wishlist.some((i) => i._id === product._id);
 
   return (
-    <div className="col-md-4 mb-4">
-      <div className="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+    <div className="col-md-4 mb-4 border-danger">
+      <div className="card h-100 shadow-sm border border-grey rounded-4 overflow-hidden">
         <div className="bg-light d-flex align-items-center justify-content-center p-3">
           <img
             src={product.image}

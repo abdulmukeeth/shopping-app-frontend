@@ -13,62 +13,73 @@ export default function Filters() {
   };
 
   return (
-    <div className="p-3 border">
-      <h5>Filters</h5>
+    <div className="p-3 border mb-4">
+      <h5 className="mb-3">Filters</h5>
 
-      <h6>Category</h6>
-      {["Men Clothing", "Women Clothing", "Kids", "Accessories", "Footwear"].map((cat) => (
-        <div key={cat}>
-          <input
-            type="checkbox"
-            checked={filters.category.includes(cat)}
-            onChange={() => handleCategory(cat)}
-          />{" "}
-          {cat}
-        </div>
-      ))}
-
-      <h6 className="mt-3">Rating: {filters.rating}+</h6>
-      <input
-        type="range"
-        min="0"
-        max="5"
-        value={filters.rating}
-        onChange={(e) =>
-          setFilters((prev) => ({
-            ...prev,
-            rating: Number(e.target.value),
-          }))
-        }
-      />
-
-      <h6 className="mt-3">Sort By Price</h6>
-      <div>
-        <input
-          type="radio"
-          name="sort"
-          checked={filters.sortBy === "LOW_TO_HIGH"}
-          onChange={() =>
-            setFilters((prev) => ({ ...prev, sortBy: "LOW_TO_HIGH" }))
-          }
-        />{" "}
-        Low to High
+      {/* CATEGORY */}
+      <div className="mb-4">
+        <h6 className="mb-2">Category</h6>
+        {["Men Clothing", "Women Clothing", "Kids", "Accessories", "Footwear"].map((cat) => (
+          <div key={cat} className="mb-1">
+            <input
+              type="checkbox"
+              checked={filters.category.includes(cat)}
+              onChange={() => handleCategory(cat)}
+            />{" "}
+            {cat}
+          </div>
+        ))}
       </div>
 
-      <div>
+      {/* RATING */}
+      <div className="mb-4">
+        <h6 className="mb-2">Rating: {filters.rating}+</h6>
         <input
-          type="radio"
-          name="sort"
-          checked={filters.sortBy === "HIGH_TO_LOW"}
-          onChange={() =>
-            setFilters((prev) => ({ ...prev, sortBy: "HIGH_TO_LOW" }))
+          type="range"
+          min="0"
+          max="5"
+          value={filters.rating}
+          className="form-range"
+          onChange={(e) =>
+            setFilters((prev) => ({
+              ...prev,
+              rating: Number(e.target.value),
+            }))
           }
-        />{" "}
-        High to Low
+        />
+      </div>
+
+      {/* SORT */}
+      <div className="mb-4">
+        <h6 className="mb-2">Sort By Price</h6>
+
+        <div className="mb-1">
+          <input
+            type="radio"
+            name="sort"
+            checked={filters.sortBy === "LOW_TO_HIGH"}
+            onChange={() =>
+              setFilters((prev) => ({ ...prev, sortBy: "LOW_TO_HIGH" }))
+            }
+          />{" "}
+          Low to High
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            name="sort"
+            checked={filters.sortBy === "HIGH_TO_LOW"}
+            onChange={() =>
+              setFilters((prev) => ({ ...prev, sortBy: "HIGH_TO_LOW" }))
+            }
+          />{" "}
+          High to Low
+        </div>
       </div>
 
       <button
-        className="btn btn-sm btn-outline-danger mt-3"
+        className="btn btn-sm btn-outline-danger w-100"
         onClick={clearFilters}
       >
         Clear Filters

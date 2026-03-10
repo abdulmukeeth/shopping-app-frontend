@@ -9,21 +9,21 @@ export default function Wishlist() {
     return <h4 className="text-center mt-4">Wishlist is empty</h4>;
 
   return (
-    <div className="container mt-4">
+    <div className="px-4 mt-4">
       <h3>My Wishlist</h3>
 
-      <div className="row">
+      <div className="row mt-4">
         {wishlist.map((item) => (
-          <div key={item._id} className="col-md-4">
+          <div key={item._id} className="col-md-3">
             <div className="card p-3">
-                <img
-      src={item.image}
-      alt={item.title}
-      className="img-fluid"
-      style={{ height: "150px", objectFit: "contain" }}
-    />
-              <h6>{item.title}</h6>
-              <p>₹{item.price}</p>
+              <img
+                src={item.image}
+                alt={item.title}
+                className="img-fluid mb-4"
+                style={{ height: "150px", objectFit: "contain" }}
+              />
+              <h6 className="px-2">{item.title}</h6>
+              <p className="px-2">₹{item.price}</p>
 
               <button
                 className="btn btn-primary btn-sm mb-2"

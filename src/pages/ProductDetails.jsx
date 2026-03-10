@@ -95,7 +95,9 @@ export default function ProductDetails() {
 
           <div className="card border-0 shadow-sm rounded-4 p-3">
             <h5 className="fw-bold mb-2">Product Description</h5>
-            <p className="text-muted mb-0">{product.description}</p>
+            <p className="text-muted mb-0" style={{ whiteSpace: "pre-line" }}>
+              {product.description}
+            </p>
           </div>
         </div>
       </div>

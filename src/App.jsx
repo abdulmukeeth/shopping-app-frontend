@@ -16,7 +16,7 @@ function App() {
       <Navbar />
       <Alert />
 
-      <div className="flex-grow-1 container py-4">
+      <div className="flex-grow-1 px-4 py-4">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<ProductListing />} />

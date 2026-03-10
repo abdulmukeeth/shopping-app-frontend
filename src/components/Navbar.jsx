@@ -14,7 +14,7 @@ export default function Navbar() {
   const wishlistCount = wishlist.length;
 
   return (
-    <nav className="navbar navbar-light bg-light px-4 shadow-sm sticky-top">
+    <nav className="navbar navbar-light bg-light px-5 shadow-sm sticky-top">
       <Link className="navbar-brand fw-bold" to="/">
         MyShoppingSite
       </Link>

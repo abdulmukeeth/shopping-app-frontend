@@ -11,9 +11,9 @@ export default function Cart() {
 
   if (!cart.length) {
     return (
-      <div className="container mt-4 text-center">
+      <div className="px-4 mt-4 text-center">
         <h3 className="fw-bold">My Cart</h3>
-        <div className="card p-4 mt-3 shadow-sm border-0 rounded-4">
+        <div className="card p-4 mt-3 shadow-sm border border-grey rounded-4">
           <h5 className="mb-2">Your cart is empty 🛒</h5>
           <p className="text-muted mb-3">
             Looks like you haven’t added anything yet.
@@ -27,7 +27,7 @@ export default function Cart() {
   }
 
   return (
-    <div className="container mt-4">
+    <div className="px-4 mt-4">
       <h3 className="fw-bold mb-3">My Cart</h3>
 
       <div className="row g-4">
@@ -36,21 +36,21 @@ export default function Cart() {
           {cart.map((item) => (
             <div
               key={item._id}
-              className="card shadow-sm border-0 rounded-4 mb-3"
+              className="card shadow-sm border border-grey rounded-4 mb-3"
             >
               <div className="card-body">
                 <div className="d-flex gap-3 align-items-center">
                   {/* IMAGE */}
                   <div
                     className="bg-light rounded-3 d-flex align-items-center justify-content-center"
-                    style={{ width: "110px", height: "110px" }}
+                    style={{ width: "110px", height: "130px" }}
                   >
                     {console.log(item)}
                     <img
                       src={item.image}
                       alt={item.title}
                       className="img-fluid"
-                      style={{ height: "90px", objectFit: "contain" }}
+                      style={{ height: "130px", objectFit: "contain" }}
                     />
                   </div>
 
@@ -111,7 +111,7 @@ export default function Cart() {
 
         {/* RIGHT: PRICE SUMMARY */}
         <div className="col-md-4">
-          <div className="card shadow-sm border-0 rounded-4">
+          <div className="card shadow-sm border border-grey rounded-4">
             <div className="card-body">
               <h5 className="fw-bold mb-3">Price Details</h5>
 

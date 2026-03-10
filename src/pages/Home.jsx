@@ -22,8 +22,8 @@ export default function Home() {
   if (loading) return <Loader />;
 
   return (
-  <div className="container mt-4">
-    <h3>Featured Categories</h3>
+  <div className="px-4 mt-2">
+    <h3 className="mb-4">Featured Categories</h3>
 
     {/* FIRST ROW - MEN & WOMEN (2 Wide Cards) */}
     <div className="row mb-4">
@@ -34,7 +34,7 @@ export default function Home() {
         .map((cat) => (
           <div key={cat._id} className="col-md-6 mb-3">
             <div
-              className="card shadow-sm border-0 rounded-4 overflow-hidden"
+              className="card shadow-sm border border-grey rounded-4 overflow-hidden"
               style={{ cursor: "pointer" }}
               onClick={() => {
                 setCategoryFilter(cat.name);
@@ -67,7 +67,7 @@ export default function Home() {
         .map((cat) => (
           <div key={cat._id} className="col-md-4 mb-3">
             <div
-              className="card shadow-sm border-0 rounded-4 overflow-hidden"
+              className="card shadow-sm border border-grey rounded-4 overflow-hidden"
               style={{ cursor: "pointer" }}
               onClick={() => {
                 setCategoryFilter(cat.name);
