@@ -77,10 +77,9 @@ export default function Cart() {
                       >
                         +
                       </button>
-
-                      <span className="ms-3 text-muted small">
-                        Subtotal: ₹{item.price * item.qty}
-                      </span>
+                    </div>
+                    <div className="fw-semibold text-dark mt-1">
+                      Subtotal: ₹{item.price * item.qty}
                     </div>
 
                     {/* ACTION BUTTONS */}
